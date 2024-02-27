@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Все пользователи</title>
 </head>
 <body>
-$END$
+<table>
+  <thead>
+  <tr>
+    <th> Id </th>
+    <th> Title </th>
+    <th> Author </th>
+    <th> Person ID </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${books.empty}">
+    <td colspan="2"> No Books Available </td>
+  </tr>
+  <tr th:each="book : ${books}">
+    <td><span th:text="${book.id}"> Id </span></td>
+    <td><span th:text="${book.title}"> Title </span></td>
+    <td><span th:text="${book.author}"> Author </span></td>
+    <td><span th:text="${book.id_person}"> ID Person </span></td>
+  </tr>
+  </tbody>
+</table>
 </body>
 </html>
