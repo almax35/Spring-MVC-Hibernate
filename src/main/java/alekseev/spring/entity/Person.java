@@ -3,6 +3,8 @@ package alekseev.spring.entity;
 
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,16 +12,30 @@ import java.util.Set;
 @Table(name="person", schema="library")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column (name = "idPerson", nullable=false)
-    Integer id;
-    @Column (name = "first name", nullable=false)
-    String firstName;
-    @Column (name = "second name", nullable=false)
-    String secondName;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_person")
+    private Integer id;
+    @Column (name = "first_name", nullable=false)
+    private String firstName;
+    @Column (name = "second_name", nullable=false)
+    private String secondName;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person")
     private Set<Book> books;
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
 
     public Integer getId() {
         return id;
@@ -43,6 +59,13 @@ public class Person {
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
+    }
 
+    public Person() {
+    }
+
+    public Person(String firstName, String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
     }
 }

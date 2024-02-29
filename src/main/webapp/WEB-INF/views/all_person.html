@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все пользователи</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th> Id </th>
+    <th> First name </th>
+    <th> Second name </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${people.empty}">
+    <td colspan="2"> No person available </td>
+  </tr>
+  <tr th:each="person : ${people}">
+    <td><span th:text="${person.id}"> Id </span></td>
+    <td><span th:text="${person.firstName}"> First name </span></td>
+    <td><span th:text="${person.secondName}"> Second name </span></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

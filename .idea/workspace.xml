@@ -9,14 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cc9d3ce-539a-41af-b3f0-3dc6b12986a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/new_book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8cc9d3ce-539a-41af-b3f0-3dc6b12986a3" name="Changes" comment="create html-form for save book">
+      <change afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/PersonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/PersonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all_person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/new_person.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/BookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Person.java" afterDir="false" />
@@ -187,11 +186,26 @@
       <workItem from="1708871476965" duration="1872000" />
       <workItem from="1708892142471" duration="47000" />
       <workItem from="1708892492744" duration="4722000" />
-      <workItem from="1709025527725" duration="15154000" />
+      <workItem from="1709025527725" duration="15260000" />
+      <workItem from="1709065091733" duration="66000" />
+      <workItem from="1709124337478" duration="5526000" />
+      <workItem from="1709208309004" duration="6857000" />
     </task>
+    <task id="LOCAL-00001" summary="create html-form for save book">
+      <created>1709064771561</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709064771562</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create html-form for save book" />
+    <option name="LAST_COMMIT_MESSAGE" value="create html-form for save book" />
   </component>
 </project>

@@ -1,19 +1,28 @@
 package alekseev.spring.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 @Entity
 @Table(name="book", schema="library")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "idBook", nullable=false)
     private Integer id;
     @Column (name = "title", nullable=false)
     private String title;
     @Column (name = "author", nullable=false)
     private String author;
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_person")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_person", referencedColumnName = "idPerson")
     private Person person;
 
     public Book() {
