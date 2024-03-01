@@ -28,6 +28,11 @@
     </tr>
     </tbody>
 </table>
+<br>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${personByID.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
 <style type="text/css">
     .table{
         border: 1px solid #eee;

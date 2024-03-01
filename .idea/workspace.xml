@@ -9,13 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cc9d3ce-539a-41af-b3f0-3dc6b12986a3" name="Changes" comment="create html-form for save book">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/showPerson.html" afterDir="false" />
+    <list default="true" id="8cc9d3ce-539a-41af-b3f0-3dc6b12986a3" name="Changes" comment="show person page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/BookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/PersonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all_books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all_books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all_person.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all_person.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/showPerson.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/showPerson.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +191,7 @@
       <workItem from="1709065091733" duration="66000" />
       <workItem from="1709124337478" duration="5526000" />
       <workItem from="1709208309004" duration="6857000" />
-      <workItem from="1709298936169" duration="9068000" />
+      <workItem from="1709298936169" duration="14776000" />
     </task>
     <task id="LOCAL-00001" summary="create html-form for save book">
       <created>1709064771561</created>
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709064771562</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="show person page">
+      <created>1709310026222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709310026222</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +215,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create html-form for save book" />
-    <option name="LAST_COMMIT_MESSAGE" value="create html-form for save book" />
+    <MESSAGE value="show person page" />
+    <option name="LAST_COMMIT_MESSAGE" value="show person page" />
   </component>
 </project>

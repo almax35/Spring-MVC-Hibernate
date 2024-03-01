@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,23 +18,33 @@ public class PersonDao {
     public PersonDao(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
+    @Transactional(readOnly = true)
     public List<Person> showPeople() {
         try (Session session = sessionFactory.openSession()) {
-            System.out.println(session.createQuery("from Person", Person.class).list().get(0).getId());
             return session.createQuery("from Person", Person.class).list();
         }
     }
 
+    @Transactional
     public void savePerson(Person person) {
         try(Session session= sessionFactory.openSession()){
             session.save(person);
         }
     }
-
+    @Transactional(readOnly = true)
     public Person showPerson(Integer id){
         try (Session session= sessionFactory.openSession()){
             return  session.get(Person.class, id);
         }
     }
+    @Transactional()
+    public void deletePerson(Integer id){
+        try (Session session= sessionFactory.openSession()){
+            session.beginTransaction();
+            session.remove(session.get(Person.class, id));
+            System.out.println(id);
+            session.getTransaction().commit();
+        }
+    }
+
 }
