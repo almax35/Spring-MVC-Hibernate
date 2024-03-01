@@ -30,4 +30,10 @@ public class PersonDao {
             session.save(person);
         }
     }
+
+    public Person showPerson(Integer id){
+        try (Session session= sessionFactory.openSession()){
+            return  session.get(Person.class, id);
+        }
+    }
 }

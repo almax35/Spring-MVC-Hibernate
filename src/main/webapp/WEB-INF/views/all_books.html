@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <style></style>
   <meta charset="UTF-8">
   <title>Все книги</title>
 </head>
 <body>
-<table>
+<table class="table">
   <thead>
   <tr>
     <th> Id </th>
     <th> Title </th>
     <th> Author </th>
-    <th> Person ID </th>
+    <th> Owner </th>
   </tr>
   </thead>
   <tbody>
@@ -22,9 +23,34 @@
     <td><span th:text="${book.id}"> Id </span></td>
     <td><span th:text="${book.title}"> Title </span></td>
     <td><span th:text="${book.author}"> Author </span></td>
-    <td><span th:text="${book.person}"> ID Person </span></td>
+    <td><span th:text="${book.person.firstName}"> Owner </span></td>
   </tr>
   </tbody>
 </table>
+<style type="text/css">
+  .table{
+    border: 1px solid #eee;
+    table-layout: fixed;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+  }
+  .table td{
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    text-align: left;
+  }
+  .table tbody tr:nth-child(odd){
+    background: #fff;
+  }
+  .table tbody tr:nth-child(even){
+    background: #F7F7F7;
+  }
+</style>
 </body>
 </html>

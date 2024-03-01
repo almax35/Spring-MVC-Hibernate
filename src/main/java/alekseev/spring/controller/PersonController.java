@@ -7,10 +7,7 @@ import alekseev.spring.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/people")
@@ -24,18 +21,24 @@ public class PersonController {
 
 
     @GetMapping()
-    public String allBooks(Model model) {
+    public String allPeople(Model model) {
         model.addAttribute("people", personDao.showPeople());
         return "/all_person";
     }
     @GetMapping("/new")
-    public String createBook(Model model){
+    public String createPeople(Model model){
         model.addAttribute("person",new Person());
         return "/new_person";
     }
     @PostMapping()
-    public String saveBook(@ModelAttribute Person person){
+    public String savePerson(@ModelAttribute Person person){
         personDao.savePerson(person);
         return "redirect:/people";
+    }
+
+    @GetMapping("/{id}")
+    public String showPersonById(Model model, @PathVariable Integer id){
+        model.addAttribute("personByID",personDao.showPerson(id));
+        return "showPerson";
     }
 }
