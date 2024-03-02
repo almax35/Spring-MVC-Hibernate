@@ -6,10 +6,7 @@ import alekseev.spring.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/books")
@@ -30,9 +27,20 @@ public class BookController {
         model.addAttribute("book",new Book());
         return "/new_book";
     }
+    @GetMapping("/{id}")
+    public String showPersonById(Model model, @PathVariable Integer id){
+        model.addAttribute("bookByID",bookDao.showBook(id));
+        return "showBook";
+    }
     @PostMapping()
     public String saveBook(@ModelAttribute Book book){
         bookDao.saveBook(book);
+        return "redirect:/books";
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteBook(@PathVariable Integer id){
+        bookDao.deleteBook(id);
         return "redirect:/books";
     }
 }

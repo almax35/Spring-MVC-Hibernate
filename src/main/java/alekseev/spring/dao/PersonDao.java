@@ -2,8 +2,11 @@ package alekseev.spring.dao;
 
 import alekseev.spring.entity.Book;
 import alekseev.spring.entity.Person;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,8 +44,13 @@ public class PersonDao {
     public void deletePerson(Integer id){
         try (Session session= sessionFactory.openSession()){
             session.beginTransaction();
+            Query query = session.createQuery("from Book where person.id = :value");
+            query.setParameter("value", id);
+            List<Book> books = query.list();
+            for (Book book: books){
+                book.setPerson(null);
+            }
             session.remove(session.get(Person.class, id));
-            System.out.println(id);
             session.getTransaction().commit();
         }
     }

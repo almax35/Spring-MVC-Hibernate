@@ -2,14 +2,13 @@ package alekseev.spring.dao;
 
 
 import alekseev.spring.entity.Book;
+import alekseev.spring.entity.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 import java.util.List;
 
@@ -27,14 +26,24 @@ public class BookDao {
             return session.createQuery("from Book", Book.class).list();
         }
     }
-
+    @Transactional
     public void saveBook(Book book) {
         try(Session session= sessionFactory.openSession()){
-            System.out.println(book.getAuthor());
             session.save(book);
         }
     }
-
-
-
+    @Transactional(readOnly = true)
+    public Book showBook(Integer id){
+        try (Session session= sessionFactory.openSession()){
+            return  session.get(Book.class, id);
+        }
+    }
+    @Transactional
+    public void deleteBook(Integer id){
+        try (Session session= sessionFactory.openSession()){
+            session.beginTransaction();
+            session.remove(session.get(Book.class, id));
+            session.getTransaction().commit();
+        }
+    }
 }
