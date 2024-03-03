@@ -6,6 +6,7 @@ import alekseev.spring.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -41,6 +42,19 @@ public class BookController {
     @DeleteMapping("/{id}")
     public String deleteBook(@PathVariable Integer id){
         bookDao.deleteBook(id);
+        return "redirect:/books";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String editBook(Model model, @PathVariable Integer id){
+        model.addAttribute("updateBook",bookDao.showBook(id));
+        return "editBook";
+    }
+    @PatchMapping("/{id}")
+    public String updateBook(@ModelAttribute Book book, @PathVariable Integer id, BindingResult bindingResult){
+        if (bindingResult.hasErrors())
+            return "editBook";
+        bookDao.updateBook(id, book);
         return "redirect:/books";
     }
 }

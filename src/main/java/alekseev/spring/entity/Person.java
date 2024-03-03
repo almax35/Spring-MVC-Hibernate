@@ -6,6 +6,7 @@ package alekseev.spring.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -22,8 +23,10 @@ public class Person {
     )
     @Column (name = "idPerson", nullable=false)
     private Integer id;
+    @Size(min = 2, max = 30, message = "First name should be between 2 and 30 characters")
     @Column (name = "first_name", nullable=false)
     private String firstName;
+    @Size(min = 2, max = 30, message = "Second name should be between 2 and 30 characters")
     @Column (name = "second_name", nullable=false)
     private String secondName;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "person")

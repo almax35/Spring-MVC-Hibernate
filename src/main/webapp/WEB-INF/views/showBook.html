@@ -25,6 +25,8 @@
     </tbody>
 </table>
 <br>
+<a th:href="@{/books/{id}/edit(id=${bookByID.getId()})}">Edit</a>
+<br>
 <form th:method="DELETE" th:action="@{/books/{id}(id=${bookByID.getId()})}">
     <input type="submit" value="Delete"/>
 </form>

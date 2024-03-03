@@ -9,12 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cc9d3ce-539a-41af-b3f0-3dc6b12986a3" name="Changes" comment="delete person page">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/showBook.html" afterDir="false" />
+    <list default="true" id="8cc9d3ce-539a-41af-b3f0-3dc6b12986a3" name="Changes" comment="show and delete book by id">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editBook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/dao/PersonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alekseev/spring/entity/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/showBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/showBook.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +193,8 @@
       <workItem from="1709124337478" duration="5526000" />
       <workItem from="1709208309004" duration="6857000" />
       <workItem from="1709298936169" duration="19138000" />
-      <workItem from="1709378621304" duration="3867000" />
+      <workItem from="1709378621304" duration="3901000" />
+      <workItem from="1709469905655" duration="8701000" />
     </task>
     <task id="LOCAL-00001" summary="create html-form for save book">
       <created>1709064771561</created>
@@ -214,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709315852951</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="show and delete book by id">
+      <created>1709388151338</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709388151338</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +234,7 @@
     <MESSAGE value="create html-form for save book" />
     <MESSAGE value="show person page" />
     <MESSAGE value="delete person page" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete person page" />
+    <MESSAGE value="show and delete book by id" />
+    <option name="LAST_COMMIT_MESSAGE" value="show and delete book by id" />
   </component>
 </project>

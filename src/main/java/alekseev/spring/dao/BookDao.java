@@ -46,4 +46,16 @@ public class BookDao {
             session.getTransaction().commit();
         }
     }
+
+    @Transactional
+    public void updateBook(Integer id, Book book){
+        try (Session session= sessionFactory.openSession()){
+            session.beginTransaction();
+            Book origonaBook=session.get(Book.class, id);
+            origonaBook.setAuthor(book.getAuthor());
+            origonaBook.setTitle(book.getTitle());
+            session.update(origonaBook);
+            session.getTransaction().commit();
+        }
+    }
 }
